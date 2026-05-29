@@ -1,7 +1,8 @@
-package LinkedList;
+package linkedlist;
 
 public class LinkedList{
-    Node head;
+    private Node head;
+    private int data;
     static class Node{
         int data;
         Node next;
@@ -124,6 +125,27 @@ public class LinkedList{
         Node r = mergeSort(right);
         return merge(l, r);
     }
+
+    public static Node createLinkedListWithLoop(){
+        Node fr = new Node(3);
+        Node sec = new Node(4);
+        Node thrd = new Node(6);
+        Node frth = new Node(8);
+        Node fifth = new Node(0);
+        Node sixth = new Node(12);
+        Node sev = new Node(35);
+        Node eigth = new Node(23);
+        fr.next = sec;
+        sec.next = thrd;
+        thrd.next = frth;
+        frth.next = fifth;
+        fifth.next = sixth;
+        sixth.next = sev; 
+        sev.next = eigth;
+        eigth.next = thrd;
+        return fr;
+    
+    }
     public static void main(String[] args){
         LinkedList ll = new LinkedList();
         // ll.print();
@@ -142,16 +164,16 @@ public class LinkedList{
         // ll.print();
         // ll.delete(5);
         // ll.print();
-        ll.insert(1);
-        ll.insert(13);
-        ll.insert(12);
-        ll.insert(15);
-        ll.insert(14);
-        ll.insert(17);
-        ll.print();
+        // ll.insert(1);
+        // ll.insert(13);
+        // ll.insert(12);
+        // ll.insert(15);
+        // ll.insert(14);
+        // ll.insert(17);
+        // ll.print();
         //ll.reverse();
-        ll.head = LinkedList.mergeSort(ll.head);
-        ll.print();
+        // ll.head = LinkedList.mergeSort(ll.head);
+        // ll.print();
         // ll.kReverse(5);
         // ll.print();
         // ll.delete(1);
@@ -162,5 +184,9 @@ public class LinkedList{
         // ll.print();
         // ll.delete(10);
         // ll.print();
+        LinkedList loopedLL = new LinkedList();
+        loopedLL.head = LinkedList.createLinkedListWithLoop();
+        // loopedLL.print();
+        
     }
 }

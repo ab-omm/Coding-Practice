@@ -15,8 +15,9 @@ public class FindMinHeightDiff {
         }
         int shortestTowerWithoutK = Integer.MAX_VALUE;
         for(int i=n-1; i>0; i--){
-            if( a[i]+k < )
+            System.out.println(i);
         }
+        return shortestTowerWithoutK;
     }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
